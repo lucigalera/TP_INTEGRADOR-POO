@@ -4,10 +4,10 @@ class Carrito:
 
     def agregar_producto(self, nombre, precio):
         if nombre.strip() == "" or precio <= 0:
-            print("❌ Error: datos inválidos.")
+            print("Error: datos inválidos.")
             return
         self.__productos.append({"nombre": nombre, "precio": precio})
-        print(f"✅ Producto '{nombre}' agregado al carrito.")
+        print(f" Producto '{nombre}' agregado al carrito.")
 
     def ver_productos(self):
         if not self.__productos:
