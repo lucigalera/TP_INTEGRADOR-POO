@@ -11,20 +11,20 @@ class Carrito:
 
     def ver_productos(self):
         if not self.__productos:
-            print("🛒 El carrito está vacío.")
+            print(" El carrito está vacío.")
         else:
             print("\n📦 Productos en el carrito:")
             for i, p in enumerate(self.__productos, 1):
                 print(f"{i}. {p['nombre']} - ${p['precio']}")
-            print(f"💰 Total: ${self.total()}")
+            print(f" Total: ${self.total()}")
 
     def eliminar_producto(self, nombre):
         for p in self.__productos:
             if p["nombre"].lower() == nombre.lower():
                 self.__productos.remove(p)
-                print(f"🗑️ Producto '{nombre}' eliminado.")
+                print(f" Producto '{nombre}' eliminado.")
                 return
-        print("❌ Producto no encontrado.")
+        print(" Producto no encontrado.")
 
     def total(self):
         return sum(p["precio"] for p in self.__productos)
@@ -50,19 +50,19 @@ def menu():
                 precio = float(input("Precio: $"))
                 carrito.agregar_producto(nombre, precio)
             except ValueError:
-                print("❌ Precio inválido.")
+                print(" Precio inválido.")
         elif opcion == "2":
             carrito.ver_productos()
         elif opcion == "3":
             nombre = input("Nombre del producto a eliminar: ")
             carrito.eliminar_producto(nombre)
         elif opcion == "4":
-            print(f"💰 Total a pagar: ${carrito.total()}")
+            print(f" Total a pagar: ${carrito.total()}")
         elif opcion == "5":
-            print("👋 Gracias por usar el carrito. ¡Hasta luego!")
+            print(" Gracias por usar el carrito. ¡Hasta luego!")
             break
         else:
-            print("⚠️ Opción inválida. Intente de nuevo.")
+            print(" Opción inválida. Intente de nuevo.")
 
 
 # Ejecutar programa
