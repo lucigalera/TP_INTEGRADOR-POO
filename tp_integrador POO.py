@@ -13,7 +13,7 @@ class Carrito:
         if not self.__productos:
             print(" El carrito está vacío.")
         else:
-            print("\n📦 Productos en el carrito:")
+            print("\n Productos en el carrito:")
             for i, p in enumerate(self.__productos, 1):
                 print(f"{i}. {p['nombre']} - ${p['precio']}")
             print(f" Total: ${self.total()}")
